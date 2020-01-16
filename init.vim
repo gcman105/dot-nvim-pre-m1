@@ -1,18 +1,14 @@
 " Specify a directory for plugins For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 
-" The line below allows me to update the Gist with the command :Gist
-" GistID: 5821422
-
-let g:github_user = "gcman105"
-let g:github_token = "23431922b6aaf989d264268df0c92f7a" 
-
+source /Users/gcman105/.config/.secrets
 "-----------------------------------------------------------------------------
 " vim-plug plugins {{{1
 "-----------------------------------------------------------------------------
 " Make sure you use single quotes
 
-call plug#begin('~/.vim/plugged')
+call plug#begin($XDG_CONFIG_HOME.'/nvim/plugged')
+"call plug#begin('~/.config/nvim/plugged')
 "Plug 'arnaud-lb/vim-php-namespace'
 "Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', }
 "Plug 'frankier/neovim-colors-solarized-truecolor-only',
@@ -101,9 +97,9 @@ call plug#end()
 "Want a different map leader than \
 let mapleader = ","
 
-let g:python3_host_prog = expand('~/dotfiles/nvim/venv/bin/python')
+let g:python3_host_prog = expand('~/dotfiles/venv/bin/python')
 
-let g:black_virtualenv = expand('~/dotfiles/nvim/venv/bin/black')
+let g:black_virtualenv = expand('~/dotfiles/venv')
 
 "Enable filetypes
 filetype on
@@ -176,7 +172,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinko
 
 " important!!
 set termguicolors
-set background=dark     " or light      
+set background=dark     " or light
 " the configuration options should be placed before `colorscheme edge`
 "let g:edge_style = 'neon'
 "let g:edge_disable_italic_comment = 1

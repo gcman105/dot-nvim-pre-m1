@@ -1,4 +1,6 @@
 venv/
+autoload/plug.vim
+plugged/
 deoplete.log
 ]
 .netrwbook
