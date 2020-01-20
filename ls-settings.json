@@ -1,0 +1,10 @@
+{
+    "pyls.plugins.pyflakes.enabled": true,
+    "pyls.plugins.pydocstyle.enabled": false,
+    "pyls.plugins.rope.enabled": false,
+    "pyls.plugins.pycodestyle.enabled": true,
+    "pyls.plugins.pycodestyle.ignore": ["E501"],
+    "pyls.plugins.mccabe.enabled": false,
+    "pyls.plugins.autopep8.enabled": false,
+    "pyls.plugins.papf.enabled": false
+}
