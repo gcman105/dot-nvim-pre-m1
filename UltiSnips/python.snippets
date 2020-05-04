@@ -1,7 +1,57 @@
 snippet tt "Test Snippet"
 "This is a snippet test for Python"
 endsnippet
-	
+
 snippet todo "this is a TODO reminder" b
 # TODO: ${1:desc} `!v strftime("%c")`
+endsnippet
+
+
+snippet mc "Django class MODEL(models.Model)" b
+class $1(models.Model):
+	$0
+
+    class Meta:
+        verbose_name_plural = "$2"
+
+    def __str__(self):
+        return "%s" % (self.$3)
+endsnippet
+
+snippet mff "Django models.ForeignKey"
+= models.ForeignKey("${1:MODEL}", on_delete=models.${2:CASCADE},)$0
+endsnippet
+
+snippet mft "Django models.TextField"
+= models.TextField(max_length=${1:1024}, blank=${2:True}, null=${3:True}, verbose_name="$4")$0
+endsnippet
+
+snippet mfc "Django models.CharField"
+= models.CharField(max_length=${1:80}, blank=${2:True}, null=${3:True}, verbose_name="$4")$0
+endsnippet
+
+snippet mfi "Django models.IntegerField"
+= models.IntegerField(${1:default=0, }verbose_name="$2")$0
+endsnippet
+
+snippet mfm "Django models.DecimalField"
+= models.DecimalField(max_digits=${1:8}, decimal_places=${2:2}, default=${3:0}, verbose_name="$4")$0
+endsnippet
+
+snippet mfd "Django models.Date DateTimeField"
+= models.Date${1:Time}Field(blank=${2:True}, null=${3:True}, verbose_name="$4")$0
+endsnippet
+
+snippet mfb "Django models.BooleanField"
+= models.BooleanField(default=${1:False}, null=${2:True}, verbose_name="$3")$0
+endsnippet
+
+snippet adr "Django Admin register model"
+@admin.register(${1:MODEL})
+class $1(admin.ModelAdmin):
+    list_display = ['${2:FIELD}', ]
+    list_display_links = ['$2', ]
+    list_filter = ['$2', ]
+    ordering = ['$2', ]
+    search_fields = ['$2', ]$0
 endsnippet
